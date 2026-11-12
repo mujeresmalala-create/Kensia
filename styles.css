@@ -900,3 +900,27 @@ body {
 main {
     overflow: visible !important;
 }
+/* CORRECCIÓN DEFINITIVA DE SCROLL */
+
+html {
+    overflow-x: clip !important;
+    overflow-y: auto !important;
+    height: auto !important;
+}
+
+body {
+    overflow: visible !important;
+    width: 100%;
+    min-height: 100vh;
+    height: auto !important;
+    position: relative;
+}
+
+/* Evitar contenedores con scroll vertical innecesario */
+main,
+.page-content,
+.content-wrapper {
+    overflow-y: visible !important;
+    height: auto !important;
+    max-height: none !important;
+}
