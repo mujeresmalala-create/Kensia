@@ -787,3 +787,88 @@ section {
         padding-top: 8rem;
     }
 }
+
+/* =========================================
+   KENSIA PHOTO HERO CAROUSEL
+   ========================================= */
+.hero.hero-carousel {
+    position: relative;
+    isolation: isolate;
+    min-height: min(820px, 100svh);
+    height: 760px;
+    max-height: 920px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 9rem 0 7rem;
+    background: #07050f;
+}
+.hero-slides, .hero-shade {
+    position: absolute;
+    inset: 0;
+}
+.hero-slides { z-index: -2; }
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.15s ease, visibility 1.15s ease;
+}
+.hero-slide.is-active { opacity: 1; visibility: visible; }
+.hero-slide img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: center 45%;
+    transform: scale(1.035);
+    transition: transform 6s ease;
+}
+.hero-slide.is-active img { transform: scale(1.12); }
+.hero-shade {
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(7,5,15,.94) 0%, rgba(7,5,15,.78) 43%, rgba(7,5,15,.25) 100%),
+                linear-gradient(0deg, rgba(7,5,15,.62), transparent 42%, rgba(7,5,15,.2));
+}
+.hero-content { width: 100%; position: relative; z-index: 1; }
+.hero-carousel .hero-text { max-width: 760px; }
+.hero-carousel .hero-title { font-size: clamp(3.2rem, 6.5vw, 6rem); }
+.hero-carousel .hero-subtitle { color: rgba(255,255,255,.86); max-width: 650px; }
+.hero-carousel .btn-secondary { background: rgba(10,8,20,.35); border-color: rgba(255,255,255,.42); }
+.carousel-controls {
+    position: absolute; z-index: 3; left: max(2rem, calc((100vw - 1200px)/2 + 2rem)); bottom: 2.6rem;
+    display: flex; align-items: center; gap: 1rem;
+}
+.carousel-arrow {
+    width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.45);
+    color: #fff; background: rgba(7,5,15,.35); backdrop-filter: blur(8px);
+    display: grid; place-items: center; font-size: 1.35rem; cursor: pointer;
+    transition: .25s ease;
+}
+.carousel-arrow:hover { background: var(--color-pink); border-color: var(--color-pink); transform: scale(1.06); }
+.carousel-dots { display: flex; align-items: center; gap: .55rem; }
+.carousel-dot { width: 9px; height: 9px; border: 0; border-radius: 20px; background: rgba(255,255,255,.55); cursor: pointer; transition: .3s ease; }
+.carousel-dot.is-active { width: 30px; background: #fff; }
+.carousel-caption {
+    position: absolute; right: max(2rem, calc((100vw - 1200px)/2 + 2rem)); bottom: 2.9rem;
+    color: rgba(255,255,255,.78); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase;
+}
+@media (max-width: 860px) {
+    .hero.hero-carousel { height: 720px; min-height: 90svh; padding: 8rem 0 8rem; text-align: left; }
+    .hero-carousel .hero-text { max-width: 650px; }
+    .hero-carousel .hero-title { font-size: clamp(2.8rem, 9vw, 4.4rem); }
+    .hero-carousel .hero-subtitle { margin: 0 0 2rem; font-size: 1.08rem; }
+    .hero-carousel .hero-actions { justify-content: flex-start; flex-wrap: wrap; }
+    .hero-shade { background: linear-gradient(90deg, rgba(7,5,15,.88), rgba(7,5,15,.48)), linear-gradient(0deg, rgba(7,5,15,.72), transparent 70%); }
+    .carousel-caption { display: none; }
+    .carousel-controls { left: 1.5rem; bottom: 1.8rem; }
+}
+@media (max-width: 480px) {
+    .hero.hero-carousel { height: 760px; min-height: 92svh; }
+    .hero-carousel .hero-title { font-size: 2.65rem; letter-spacing: -1px; }
+    .hero-carousel .hero-subtitle { font-size: 1rem; }
+    .hero-carousel .hero-actions { gap: .7rem; }
+    .hero-carousel .hero-actions .btn { padding: .75rem 1.1rem; font-size: .9rem; }
+    .hero-slide img { object-position: 54% center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide, .hero-slide img, .carousel-arrow, .carousel-dot { transition: none !important; }
+}

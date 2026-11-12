@@ -127,88 +127,54 @@
              HERO
         ========================== -->
 
-        <section id="inicio" class="hero">
+        <section id="inicio" class="hero hero-carousel" aria-label="Presentación de KENSIA">
 
-            <div class="container hero-container">
-
-
-                <div class="hero-text fade-in-up">
-
-                    <span class="badge">
-                        Arte y cultura para transformar Kennedy
-                    </span>
-
-
-                    <h1 class="hero-title">
-
-                        Arte, cultura y
-
-                        <br>
-
-                        <span class="gradient-text hero-title-main">
-                            transformación
-                        </span>
-
-                    </h1>
-
-
-                    <p class="hero-subtitle">
-
-                        Somos una agrupación juvenil de Kennedy que utiliza
-                        el arte, la cultura y la participación comunitaria
-                        como herramientas para fortalecer el tejido social,
-                        promover la equidad y generar transformaciones
-                        en el territorio.
-
-                    </p>
-
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="#nosotras"
-                            class="btn btn-primary">
-
-                            Conoce nuestra historia
-
-                        </a>
-
-
-                        <a
-                            href="#impacto"
-                            class="btn btn-secondary">
-
-                            Nuestra trayectoria
-
-                            <i class="ph ph-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
+            <div class="hero-slides" aria-live="off">
+                <div class="hero-slide is-active">
+                    <img src="assets/fotos/kensia-01.webp" alt="Integrantes de KENSIA durante una presentación artística" fetchpriority="high">
                 </div>
-
-
-
-                <div class="hero-visual fade-in-left">
-
-                    <div class="glass-card hero-glass-card">
-
-                        <img
-                            src="logo.jpg"
-                            alt="Logo de KENSIA"
-                            class="floating-logo">
-
-                        <div class="card-glow"></div>
-
-                    </div>
-
+                <div class="hero-slide">
+                    <img src="assets/fotos/kensia-02.webp" alt="KENSIA en una actividad artística en el espacio público" loading="lazy">
                 </div>
-
+                <div class="hero-slide">
+                    <img src="assets/fotos/kensia-03.webp" alt="Integrantes de KENSIA en una intervención comunitaria" loading="lazy">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/fotos/kensia-04.webp" alt="Expresión teatral y artística de KENSIA" loading="lazy">
+                </div>
             </div>
 
-        </section>
+            <div class="hero-shade"></div>
 
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Arte y cultura para transformar Kennedy</span>
+                    <h1 class="hero-title">
+                        Arte, cultura y<br>
+                        <span class="gradient-text hero-title-main">transformación</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Somos una agrupación juvenil de Kennedy que utiliza el arte, la cultura y la participación comunitaria como herramientas para fortalecer el tejido social, promover la equidad y generar transformaciones en el territorio.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#nosotras" class="btn btn-primary">Conoce nuestra historia</a>
+                        <a href="#impacto" class="btn btn-secondary">Nuestra trayectoria <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls" aria-label="Controles del carrusel">
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Fotografía anterior"><i class="ph ph-caret-left"></i></button>
+                <div class="carousel-dots" role="group" aria-label="Seleccionar fotografía">
+                    <button class="carousel-dot is-active" type="button" aria-label="Mostrar fotografía 1" aria-pressed="true"></button>
+                    <button class="carousel-dot" type="button" aria-label="Mostrar fotografía 2" aria-pressed="false"></button>
+                    <button class="carousel-dot" type="button" aria-label="Mostrar fotografía 3" aria-pressed="false"></button>
+                    <button class="carousel-dot" type="button" aria-label="Mostrar fotografía 4" aria-pressed="false"></button>
+                </div>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Fotografía siguiente"><i class="ph ph-caret-right"></i></button>
+            </div>
+            <span class="carousel-caption">KENSIA · Arte, cultura y comunidad</span>
+        </section>
 
 
         <!-- =========================
