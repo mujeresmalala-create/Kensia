@@ -872,3 +872,11 @@ section {
 @media (prefers-reduced-motion: reduce) {
     .hero-slide, .hero-slide img, .carousel-arrow, .carousel-dot { transition: none !important; }
 }
+
+
+/* Navegación multipágina KENSIA */
+.nav-link.active { color: var(--text-main); position: relative; }
+.nav-link.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; border-radius: 2px; background: var(--grad-full); }
+main:not(:has(.hero-carousel)) { padding-top: 7rem; min-height: 65vh; }
+main:not(:has(.hero-carousel)) > section { padding-top: 5rem; }
+@media (max-width: 768px) { main:not(:has(.hero-carousel)) { padding-top: 6rem; } }
