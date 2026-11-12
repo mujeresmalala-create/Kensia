@@ -880,47 +880,27 @@ section {
 main:not(:has(.hero-carousel)) { padding-top: 7rem; min-height: 65vh; }
 main:not(:has(.hero-carousel)) > section { padding-top: 5rem; }
 @media (max-width: 768px) { main:not(:has(.hero-carousel)) { padding-top: 6rem; } }
-/* =========================================
-   CORRECCIÓN DE DOBLE BARRA DE DESPLAZAMIENTO
-========================================= */
 
-html {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    height: auto !important;
-}
 
-body {
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-    height: auto !important;
-    min-height: 100vh;
-}
-
-main {
-    overflow: visible !important;
-}
-/* CORRECCIÓN DEFINITIVA DE SCROLL */
-
-html {
-    overflow-x: clip !important;
-    overflow-y: auto !important;
-    height: auto !important;
-}
-
-body {
-    overflow: visible !important;
-    width: 100%;
-    min-height: 100vh;
-    height: auto !important;
-    position: relative;
-}
-
-/* Evitar contenedores con scroll vertical innecesario */
-main,
-.page-content,
-.content-wrapper {
-    overflow-y: visible !important;
-    height: auto !important;
-    max-height: none !important;
-}
+/* Trayectoria: galería documental y fotográfica */
+html { height: auto; min-height: 100%; overflow-x: clip; overflow-y: auto; }
+body { height: auto; min-height: 100%; overflow-x: clip; overflow-y: visible; }
+.trajectory-records, .trajectory-documents { padding-top: 4.5rem; padding-bottom: 2rem; }
+.trajectory-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.35rem; margin-top: 2.5rem; }
+.trajectory-card { overflow: hidden; border: 1px solid var(--glass-border); border-radius: 20px; background: rgba(255,255,255,.035); box-shadow: 0 14px 40px rgba(0,0,0,.16); transition: transform .3s ease, border-color .3s ease; }
+.trajectory-card:hover { transform: translateY(-5px); border-color: rgba(237,28,111,.45); }
+.trajectory-card img { display: block; width: 100%; height: 245px; object-fit: cover; object-position: center; }
+.trajectory-card-body { padding: 1.35rem 1.4rem 1.5rem; }
+.trajectory-date { display: inline-block; margin-bottom: .55rem; color: #ffb34d; font-size: .82rem; font-weight: 700; letter-spacing: .025em; }
+.trajectory-card h3 { font-size: 1.22rem; margin-bottom: .6rem; }
+.trajectory-card p { color: var(--text-muted); font-size: .96rem; line-height: 1.65; }
+.document-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.document-link { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; border: 1px solid var(--glass-border); border-radius: 16px; color: var(--text-main); text-decoration: none; transition: border-color .25s ease, transform .25s ease; }
+.document-link:hover { border-color: var(--color-pink); transform: translateY(-3px); }
+.document-link > i:first-child { color: var(--color-orange-light); font-size: 2rem; flex: 0 0 auto; }
+.document-link > i:last-child { margin-left: auto; color: var(--text-muted); font-size: 1.15rem; flex: 0 0 auto; }
+.document-link span { display: grid; gap: .3rem; }
+.document-link small { color: var(--text-muted); line-height: 1.45; }
+.records-note { margin: 1rem 0 0; color: var(--text-muted); font-size: .82rem; }
+@media (max-width: 900px) { .trajectory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .trajectory-grid, .document-links { grid-template-columns: 1fr; } .trajectory-card img { height: 230px; } .trajectory-records, .trajectory-documents { padding-top: 3rem; } }
