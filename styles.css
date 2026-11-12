@@ -880,3 +880,23 @@ section {
 main:not(:has(.hero-carousel)) { padding-top: 7rem; min-height: 65vh; }
 main:not(:has(.hero-carousel)) > section { padding-top: 5rem; }
 @media (max-width: 768px) { main:not(:has(.hero-carousel)) { padding-top: 6rem; } }
+/* =========================================
+   CORRECCIÓN DE DOBLE BARRA DE DESPLAZAMIENTO
+========================================= */
+
+html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+}
+
+body {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    height: auto !important;
+    min-height: 100vh;
+}
+
+main {
+    overflow: visible !important;
+}
